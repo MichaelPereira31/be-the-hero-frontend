@@ -3,3 +3,4 @@ describe('Healthcheck', () => {
     expect(2 + 2).toBe(4)
   })
 })
+console.log('love')
