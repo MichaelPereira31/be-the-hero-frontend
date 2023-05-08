@@ -79,6 +79,10 @@ export const ModalOptions = styled.div`
 export const ModalLink = styled.a`
   color: var(--purple-100);
   font-size: var(--fontsize-small);
+
+  :hover {
+    text-decoration: underline;
+  }
 `
 
 export const ModalText = styled.p`
