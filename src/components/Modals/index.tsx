@@ -1,22 +1,14 @@
-import { useEffect } from 'react'
-import Modal from 'react-modal'
+import { ReactNode, useEffect } from 'react'
+import Modal, { Styles } from 'react-modal'
 
 import * as S from './styles'
-import { CSSProperties } from 'styled-components'
 
 type TBaseModal = {
   contentLabel: string
   setModalIsOpen: (value: boolean) => void
   modalIsOpen: boolean
-  children: React.ReactElement
+  children: ReactNode
   customContent: object
-}
-
-type Content = CSSProperties | undefined
-
-export type TModalStyles = {
-  content?: Content
-  overlay?: Content
 }
 
 const BaseModal = (props: TBaseModal) => {
@@ -28,13 +20,13 @@ const BaseModal = (props: TBaseModal) => {
     Modal.setAppElement('body')
   }, [])
 
-  const customStyles: TModalStyles = {
+  const customStyles = {
     ...S.defaultModalStyles,
     content: {
       ...S.defaultModalStyles.content,
       ...props.customContent
     }
-  }
+  } as unknown as Styles
 
   return (
     <Modal
