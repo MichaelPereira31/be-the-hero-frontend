@@ -31,6 +31,7 @@ const GlobalStyles = createGlobalStyle`
     --purple-600-23: #D9C3DF;
     --purple-600-2: #fcfafc;
     --purple-700: #500669;
+    --yellow: yellow;
     --green-100: #d4edda;
     --green-300: #2C7E05;
     --green-400: #32EB4F;
@@ -77,6 +78,7 @@ const GlobalStyles = createGlobalStyle`
     --fontsize-40: 40px;
     --fontsize-45: 45px;
     --fontsize-48: 48px;
+    --fontsize-72: 72px;
 
     --fw-light: 300;
     --fw-regular: 400;

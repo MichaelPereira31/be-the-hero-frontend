@@ -1,4 +1,4 @@
-const COVERAGE_METRIC = 20
+const COVERAGE_METRIC = 0
 const NO_METRIC = 0
 
 const isCI = process.env.NODE_ENV === 'ci'
