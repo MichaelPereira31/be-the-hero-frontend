@@ -7,7 +7,7 @@ export const MainContainer = styled.section`
   display: flex;
 
   max-width: 1280px;
-  padding: 0 48px;
+  padding: 0 var(--spacing-8);
   margin: 0 auto;
 `
 
@@ -23,22 +23,25 @@ export const InfoContainer = styled.div`
 `
 
 export const Text = styled.p`
-  font-size: 20px;
+  font-size: var(--fontsize-20);
 `
 
 export const TextInfo = styled.p`
-  font-size: 20px;
-  margin-bottom: 30px;
+  font-size: var(--fontsize-20);
+  text-align: justify;
+
+  margin-bottom: var(--spacing-4);
 `
 
 export const Branding = styled.p`
-  font-size: 60px;
+  font-size: var(--fontsize-72);
 `
 
 export const ButtonLogo = styled(SecondaryButton)`
-  background-color: balck;
+  background-color: var(--black);
   width: 160px;
-  color: yellow;
-  font-size: 16px;
-  font-weight: 300;
+
+  color: var(--yellow);
+  font-size: var(--fontsize-16);
+  font-weight: var(--fw-regular);
 `
