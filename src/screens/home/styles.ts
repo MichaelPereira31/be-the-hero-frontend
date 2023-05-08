@@ -35,6 +35,7 @@ export const TextInfo = styled.p`
 
 export const Branding = styled.p`
   font-size: var(--fontsize-72);
+  font-weight: var(--fw-bold);
 `
 
 export const ButtonLogo = styled(SecondaryButton)`
