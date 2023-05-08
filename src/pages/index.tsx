@@ -1,5 +1,5 @@
-const Home = () => {
-  return <h1>Olá bebes</h1>
-}
+import HomeScreen from '@/screens/home'
+
+const Home = () => <HomeScreen />
 
 export default Home
