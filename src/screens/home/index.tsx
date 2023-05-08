@@ -20,7 +20,7 @@ const HomeScreen = () => {
               O site que conecta pessoas dispostas a ajudar causas que precisam
               de um herói. Junte-se a nós e faça a diferença vida das pessoas.
             </S.TextInfo>
-            <S.ButtonLogo>Seja um Heroi</S.ButtonLogo>
+            <S.ButtonLogo>Seja um Heroi!</S.ButtonLogo>
           </S.InfoContainer>
           <S.InfoContainer>
             <Image src={logo.src} />
