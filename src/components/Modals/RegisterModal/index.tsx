@@ -1,4 +1,4 @@
-import BaseModal from '@/components/Modals'
+import BaseModal from '@/components/BaseModal'
 import Input from '@/components/Inputs/index'
 import { ImageSimpleLogo } from '../LoginModal/styles'
 import logoMini from '@/assets/img/simple-logo.png'
@@ -10,17 +10,13 @@ type TRegisterModalProps = {
 }
 
 const RegisterModal = (props: TRegisterModalProps) => {
-  const customModalContent = {
-    height: '620px',
-    borderRadius: 0
-  }
-
   return (
     <BaseModal
-      modalIsOpen={props.modalIsOpen}
-      setModalIsOpen={props.setModalIsOpen}
-      contentLabel="Register Modal"
-      customContent={customModalContent}
+      isOpen={props.modalIsOpen}
+      setIsOpen={props.setModalIsOpen}
+      style={{
+        height: '620px'
+      }}
     >
       <S.ModalBody data-testid="register-modal">
         <S.ModalDescription>
