@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import BaseModal from '../index'
+import BaseModal from '@/components/BaseModal'
 
 import {
   ModalBody,
@@ -24,21 +24,17 @@ type TLoginModalProps = {
 const LoginModal = (props: TLoginModalProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const customModalContent = {
-    height: '560px',
-    borderRadius: 0
-  }
-
   const handleRegisterModal = () => {
     setIsOpen(true)
   }
 
   return (
     <BaseModal
-      modalIsOpen={props.modalIsOpen}
-      setModalIsOpen={props.setModalIsOpen}
-      contentLabel="Login Modal"
-      customContent={customModalContent}
+      isOpen={props.modalIsOpen}
+      setIsOpen={props.setModalIsOpen}
+      style={{
+        height: '560px'
+      }}
     >
       <ModalBody data-testid="login-modal">
         <ModalDescription>
