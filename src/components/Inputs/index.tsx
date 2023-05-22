@@ -18,7 +18,7 @@ const Input = (props: TInputsProps) => {
 
   return (
     <>
-      {label && <S.Label>{label}</S.Label>}
+      {label && <S.Label htmlFor={name}>{label}</S.Label>}
       <S.Wrapper data-testid={`input-validated-${name}`}>
         <S.Input
           name={name}
