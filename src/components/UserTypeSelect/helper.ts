@@ -6,7 +6,7 @@ import VoluntaryIcon from '@/assets/img/voluntary.svg'
 export const getOptionConf = (value: TUserType) => {
   const isOng = value === 'ong'
   return {
-    text: isOng ? 'Ong' : 'Voluntário',
+    text: isOng ? 'Instituição' : 'Voluntário',
     icon: isOng ? OngIcon.src : VoluntaryIcon.src
   }
 }
