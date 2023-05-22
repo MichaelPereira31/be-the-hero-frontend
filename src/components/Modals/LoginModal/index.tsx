@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import { useFormik } from 'formik'
-import BaseModal from '@/components/BaseModal'
 import * as yup from 'yup'
 
+import BaseModal from '@/components/BaseModal'
 import {
   ModalBody,
   ModalDescription,
   ModalOptions,
   ModalText,
-  ModalLink
+  ModalLink,
+  Form,
+  ModalButtom
 } from '../styles'
 import Input from '@/components/Inputs'
 import RegisterModal from '../RegisterModal'
@@ -70,40 +72,31 @@ const LoginModal = (props: TLoginModalProps) => {
           <S.ImageSimpleLogo src={logoMini.src} />
         </ModalDescription>
 
-        <S.Form onSubmit={formik.handleSubmit}>
-          <div>
-            <Input
-              id="email"
-              name="email"
-              type="text"
-              label="Email / Usuário"
-              value={formik.values.email}
-              error={formik.errors.email}
-              onChange={formik.handleChange}
-            />
-          </div>
+        <Form onSubmit={formik.handleSubmit}>
+          <Input
+            id="email"
+            name="email"
+            type="text"
+            label="Email / Usuário"
+            value={formik.values.email}
+            error={formik.errors.email}
+            onChange={formik.handleChange}
+          />
+          <Input
+            id="password"
+            name="password"
+            type="password"
+            label="Senha"
+            showButton
+            value={formik.values.password}
+            error={formik.errors.password}
+            onChange={formik.handleChange}
+          />
 
-          <div>
-            <Input
-              id="password"
-              name="password"
-              type="password"
-              label="Senha"
-              showButton
-              value={formik.values.password}
-              error={formik.errors.password}
-              onChange={formik.handleChange}
-            />
-          </div>
-
-          <S.SubmitButton
-            variant="secondary"
-            isLoading={isLoading}
-            type="submit"
-          >
+          <ModalButtom variant="secondary" isLoading={isLoading} type="submit">
             Entrar
-          </S.SubmitButton>
-        </S.Form>
+          </ModalButtom>
+        </Form>
 
         <ModalOptions>
           <ModalLink>Esqueceu a senha?</ModalLink>

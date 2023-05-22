@@ -1,6 +1,6 @@
 import { device } from '@/utils/device'
 import styled from 'styled-components'
-import { SecondaryButton } from '../Buttons'
+import LoadingButton from '../Buttons/LoadingButton'
 
 export const ModalClose = styled.button`
   position: absolute;
@@ -41,11 +41,13 @@ export const ModalDescription = styled.p`
   }
 `
 
-export const ModalLabel = styled.label`
-  font-size: var(--fontsize-medium);
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
 `
 
-export const ModalButtom = styled(SecondaryButton)`
+export const ModalButtom = styled(LoadingButton)`
   width: 100%;
   margin-inline: auto;
   margin-top: var(--spacing-2);
