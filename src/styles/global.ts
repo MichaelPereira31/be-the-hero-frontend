@@ -5,8 +5,10 @@ const GlobalStyles = createGlobalStyle`
     --black: #000000;
     --black-40: #00000040;
     --white: #FFFFFF;
+    --white-50: #ededed;
     --white-100: #edeff4;
     --white-200: #dfe4f7;
+    --gray-68: #D9D9D9AD;
     --gray-50: #9D9D9D;
     --gray-100: #3F3F3F;
     --gray-100-21: #F1F1F1;
@@ -79,6 +81,7 @@ const GlobalStyles = createGlobalStyle`
     --fontsize-45: 45px;
     --fontsize-48: 48px;
     --fontsize-72: 72px;
+    --fontsize-96: 96px;
 
     --fw-light: 300;
     --fw-regular: 400;
