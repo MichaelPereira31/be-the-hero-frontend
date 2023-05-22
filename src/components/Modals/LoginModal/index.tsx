@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useFormik } from 'formik'
+import Router from 'next/router'
 import * as yup from 'yup'
 
 import BaseModal from '@/components/BaseModal'
@@ -45,7 +46,11 @@ const LoginModal = (props: TLoginModalProps) => {
   const handleLogin = (values: ILoginUserPayload) => {
     setIsLoading(true)
     loginUser(values)
-      .then((data) => console.log(data.data))
+      .then((data) => {
+        // TODO: menage token with cookies
+        console.log(data)
+        Router.push('/profile/complete-registration')
+      })
       .catch(() => formik.setFieldError('email', 'Not registred email.'))
       .finally(() => setIsLoading(false))
   }
