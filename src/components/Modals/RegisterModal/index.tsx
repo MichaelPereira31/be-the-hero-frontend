@@ -25,8 +25,6 @@ const RegisterModal = (props: TRegisterModalProps) => {
         </S.ModalDescription>
 
         <form>
-          <S.ModalLabel htmlFor="username">Username</S.ModalLabel>
-          <Input name="username" type="text" showButton={false} />
           <S.ModalLabel htmlFor="email">E-mail</S.ModalLabel>
           <Input name="email" type="text" showButton={false} />
           <S.ModalLabel htmlFor="password">Senha</S.ModalLabel>
