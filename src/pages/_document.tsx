@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
+import ToastMessage from '@/components/ToastMessage'
 import { Html, Head, Main, NextScript } from 'next/document'
 
 const Document = () => {
@@ -16,6 +17,7 @@ const Document = () => {
       <body>
         <Main />
         <NextScript />
+        <ToastMessage />
       </body>
     </Html>
   )
