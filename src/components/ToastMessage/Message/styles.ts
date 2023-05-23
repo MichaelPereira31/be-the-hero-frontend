@@ -1,20 +1,41 @@
 import styled from 'styled-components'
 import { IMessageConf } from '..'
 
-export const Container = styled.div`
+export const Container = styled.div<{ type: IMessageConf['type'] }>`
+  --background-color: ${(props) =>
+    props.type === 'success' ? 'var(--green-400)' : 'var(--red-400)'};
+
   width: 100%;
+
+  border-radius: 8px;
 `
 
 export const MessageContainer = styled.div`
   width: 100%;
-  padding: var(--spacing-3);
+  padding-bottom: var(--spacing-3);
+  padding-inline: var(--spacing-3);
 
   background-color: var(--white-100);
 
   position: relative;
+
+  display: flex;
+  gap: var(--spacing-1);
+  flex-direction: column;
 `
 
-export const Text = styled.p``
+export const MessageHeader = styled.div`
+  margin-top: var(--spacing-2);
+`
+
+export const MessageTitle = styled.h2`
+  font-size: var(--fontsize-12);
+  font-weight: var(--fw-bold);
+`
+
+export const Text = styled.p`
+  font-size: var(--fontsize-12);
+`
 
 export const CloseIcon = styled.button`
   position: absolute;
@@ -23,12 +44,21 @@ export const CloseIcon = styled.button`
   right: 10px;
 `
 
-export const SpaceTimer = styled.div<{ type: IMessageConf['type'] }>`
+export const SpaceTimer = styled.div<{
+  type: IMessageConf['type']
+  timeLife: number
+  gPercentage: number
+}>`
+  --gradient-percentage: ${(props) => props.gPercentage ?? 0}%;
   --background-color: ${(props) =>
-    props.type === 'success' ? 'green' : 'red'};
+    props.type === 'success' ? 'var(--green-400)' : 'var(--red-400)'};
 
   width: 100%;
   height: 3px;
 
-  background-color: var(--background-color);
+  background: linear-gradient(
+    90deg,
+    var(--background-color) var(--gradient-percentage),
+    white 100%
+  );
 `
