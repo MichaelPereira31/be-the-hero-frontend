@@ -10,10 +10,14 @@ interface ILoadingButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const LoadingButton = (props: ILoadingButton) => {
-  const { variant, isLoading, children, ...rest } = props
+  const { variant, isLoading, children, disabled, ...rest } = props
   const Button = getButton(variant)
 
-  return <Button {...rest}>{isLoading ? <Loading /> : children}</Button>
+  return (
+    <Button {...rest} disabled={isLoading ?? disabled}>
+      {isLoading ? <Loading /> : children}
+    </Button>
+  )
 }
 
 export default LoadingButton
