@@ -4,6 +4,10 @@ export const Wrapper = styled.div`
   position: relative;
 `
 
+export const Label = styled.label`
+  font-size: var(--fontsize-14);
+`
+
 export const Input = styled.input`
   width: 100%;
   height: 32px;
@@ -11,9 +15,13 @@ export const Input = styled.input`
   border: 1px solid var(--purple-400);
   border-radius: 4px;
 
-  margin-bottom: var(--spacing-5);
   padding-inline: var(--spacing-2);
   position: relative;
+`
+
+export const Error = styled.sub`
+  color: var(--red-400);
+  font-size: var(--fontsize-11);
 `
 
 export const Image = styled.img`
