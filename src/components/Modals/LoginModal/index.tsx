@@ -21,6 +21,7 @@ import { emailError, requiredError } from '@/utils/yup/messages'
 import logoMini from '@/assets/img/simple-logo.png'
 import * as S from './styles'
 import loginUser from '@/services/api/user/loginUser'
+import { addNewToast } from '@/utils/toast/addMessage'
 
 type TLoginModalProps = {
   setModalIsOpen: (value: boolean) => void
@@ -49,9 +50,19 @@ const LoginModal = (props: TLoginModalProps) => {
       .then((data) => {
         // TODO: menage token with cookies
         console.log(data)
+        addNewToast({
+          message: 'Login completed successfully!',
+          type: 'success'
+        })
         Router.push('/profile/complete-registration')
       })
-      .catch(() => formik.setFieldError('email', 'Not registred email.'))
+      .catch(() =>
+        addNewToast({
+          message: 'Invalid credentials',
+          type: 'error',
+          title: 'Login Error'
+        })
+      )
       .finally(() => setIsLoading(false))
   }
 

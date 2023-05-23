@@ -15,6 +15,7 @@ import logoMini from '@/assets/img/simple-logo.png'
 import * as S from './styles'
 import createUser from '@/services/api/user/createUser'
 import { useState } from 'react'
+import { addNewToast } from '@/utils/toast/addMessage'
 
 type TRegisterModalProps = {
   setModalIsOpen: (value: boolean) => void
@@ -61,10 +62,15 @@ const RegisterModal = (props: TRegisterModalProps) => {
       password: values.password
     })
       .then(() => {
-        alert('User created successfully')
+        addNewToast({ message: 'User created successfully', type: 'success' })
         props.setModalIsOpen(false)
       })
-      .catch(() => alert('Unable to create user. Try again later!'))
+      .catch(() =>
+        addNewToast({
+          message: 'Unable to create user. Try again later!',
+          type: 'error'
+        })
+      )
       .finally(() => setIsLoading(false))
   }
 
