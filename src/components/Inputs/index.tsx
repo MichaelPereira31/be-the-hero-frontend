@@ -17,7 +17,7 @@ const Input = (props: TInputsProps) => {
   const validatePassword = inputType === 'password'
 
   return (
-    <div>
+    <S.Container>
       {label && <S.Label htmlFor={name}>{label}</S.Label>}
       <S.Wrapper data-testid={`input-validated-${name}`}>
         <S.Input
@@ -38,7 +38,7 @@ const Input = (props: TInputsProps) => {
         )}
         {error && <S.Error>{error}</S.Error>}
       </S.Wrapper>
-    </div>
+    </S.Container>
   )
 }
 

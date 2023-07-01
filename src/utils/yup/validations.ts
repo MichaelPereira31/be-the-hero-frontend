@@ -1,0 +1,2 @@
+export const phoneRegexValidation =
+  /^(?:\+55)?\s?(?:\(\d{2}\)\s?|\d{2}\s?)?(?:9\s?)?(?:\d{4}|\d{5})[-\s]?\d{4}$/

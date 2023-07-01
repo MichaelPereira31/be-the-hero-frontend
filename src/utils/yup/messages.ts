@@ -1,11 +1,15 @@
 export const requiredError = (name: string) => {
-  return `"${name}" is required!`
+  return `"${name}" é obrigatório!`
 }
 
 export const emailError = (name: string) => {
-  return `"${name}" is not a valid email!`
+  return `"${name}" não é um email válido!`
 }
 
 export const confirmationFieldError = (name: string, confirmName: string) => {
-  return `"${confirmName}" should be equal to "${name}"`
+  return `"${confirmName}" deve ser igual a "${name}"`
+}
+
+export const phoneNumberError = (name: string) => {
+  return `"${name}" deve ser um número válido`
 }

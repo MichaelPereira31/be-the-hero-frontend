@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     --white-50: #ededed;
     --white-100: #edeff4;
     --white-200: #dfe4f7;
+    --white-300: #d9d9d9;
     --gray-68: #D9D9D9AD;
     --gray-50: #9D9D9D;
     --gray-100: #3F3F3F;
@@ -37,6 +38,7 @@ const GlobalStyles = createGlobalStyle`
     --green-100: #d4edda;
     --green-300: #2C7E05;
     --green-400: #32EB4F;
+    --green-450: #0FF126;
     --green-500: #155724;
     --lime-800: #246406;
     --blue-100: #cce5ff;
