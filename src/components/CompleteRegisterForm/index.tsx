@@ -6,6 +6,7 @@ import CompleteUserForm from '../Forms/CompleteUserForm'
 
 import * as S from './styles'
 import CreateOngForm from '../Forms/CreateOngForm'
+import { useRouter } from 'next/router'
 
 interface ICompleteRegister {
   userType: TUserType
@@ -15,11 +16,17 @@ interface ICompleteRegister {
 const TAB_OPTIONS: TUserType[] = ['voluntary', 'ong']
 
 const CompleteRegister = (props: ICompleteRegister) => {
+  const { push } = useRouter()
   const [selectedTab, setSelectedTab] = useState<TUserType | undefined>(
     'voluntary'
   )
 
   const shouldHideOngForm = props.userType === 'voluntary'
+
+  const userSuccessCallback = () => {
+    if (shouldHideOngForm) return push('/feed')
+    return setSelectedTab('ong')
+  }
 
   return (
     <S.Container>
@@ -44,9 +51,15 @@ const CompleteRegister = (props: ICompleteRegister) => {
       </S.TabContainer>
       <S.RightContainer>
         {selectedTab === 'ong' ? (
-          <CreateOngForm resetUserType={props.resetUserType} />
+          <CreateOngForm
+            resetUserType={props.resetUserType}
+            submitCallback={() => push('/feed')}
+          />
         ) : (
-          <CompleteUserForm resetUserType={props.resetUserType} />
+          <CompleteUserForm
+            resetUserType={props.resetUserType}
+            submitCallback={userSuccessCallback}
+          />
         )}
       </S.RightContainer>
     </S.Container>
