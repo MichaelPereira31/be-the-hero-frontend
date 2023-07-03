@@ -15,6 +15,7 @@ export interface ICompleteUserFormData {
 
 export interface ICompleteUserForm {
   resetUserType: () => void
+  submitCallback: () => void
 }
 
 const CompleteUserForm = (props: ICompleteUserForm) => {
