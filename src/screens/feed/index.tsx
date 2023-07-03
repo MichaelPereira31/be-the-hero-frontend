@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 
 import VacancyCard, { IVacancyCard } from '@/components/Cards/VacancyCard'
-import Header from '@/components/header'
-import { FullyContainer, MainContainer } from '@/styles/Containers'
+import LoggedHeader from '@/components/LoggedHeader'
+import { FullyContainer, FullyHeader } from '@/styles/Containers'
 
 import { getVacancies } from './fake'
 import * as S from './styles'
@@ -16,9 +16,9 @@ const FeedScreen = () => {
 
   return (
     <>
-      <MainContainer>
-        <Header />
-      </MainContainer>
+      <FullyHeader>
+        <LoggedHeader />
+      </FullyHeader>
       <FullyContainer>
         <S.TopContainer>
           <S.CallToAction>QUEM SOMOS NÓS?</S.CallToAction>

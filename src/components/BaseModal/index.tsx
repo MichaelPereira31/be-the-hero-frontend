@@ -10,6 +10,7 @@ interface IBaseModal {
   height?: number
   style?: CSSProperties
   backdropStyles?: CSSProperties
+  noCloseButton?: boolean
 }
 
 const BaseModal = (props: IBaseModal) => {
@@ -44,7 +45,11 @@ const BaseModal = (props: IBaseModal) => {
             style={props.style}
             ref={clickRef}
           >
-            <S.CloseIcon onClick={() => props.setIsOpen(false)}>X</S.CloseIcon>
+            {!props.noCloseButton && (
+              <S.CloseIcon onClick={() => props.setIsOpen(false)}>
+                X
+              </S.CloseIcon>
+            )}
             {props.children}
           </S.Container>
         </>,
