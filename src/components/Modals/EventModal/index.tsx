@@ -28,6 +28,7 @@ const schema = yup.object({
 
 const EventModal = (props: TEventModalProps) => {
   const [isLoading, setIsLoading] = useState(false)
+  console.log(isLoading)
 
   const handleCreate = () => {
     setIsLoading(true)
