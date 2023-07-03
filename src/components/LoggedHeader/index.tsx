@@ -1,20 +1,16 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 import * as S from './styles'
 
 import EventModal from '../Modals/EventModal'
-import LoginModal from '../Modals/LoginModal'
 
 const LoggedHeader = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
-  const [modalLoginIsOpen, setModalLoginIsOpen] = useState(false)
+  const { push } = useRouter()
 
   const handleOpenEventModal = () => {
     setModalIsOpen(true)
-  }
-
-  const handleOpenLoginModal = () => {
-    setModalLoginIsOpen(true)
   }
 
   return (
@@ -32,11 +28,7 @@ const LoggedHeader = () => {
           />
         </S.MenuItem>
         <S.MenuItem>
-          <button onClick={handleOpenLoginModal}>logout</button>
-          <LoginModal
-            setModalIsOpen={setModalLoginIsOpen}
-            modalIsOpen={modalLoginIsOpen}
-          />
+          <button onClick={() => push('/')}>logout</button>
         </S.MenuItem>
       </S.Menu>
     </S.HeaderContainer>
