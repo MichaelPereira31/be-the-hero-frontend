@@ -13,6 +13,7 @@ export const FullyContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 
   width: 100%;
   min-height: calc(100vh - 70px);

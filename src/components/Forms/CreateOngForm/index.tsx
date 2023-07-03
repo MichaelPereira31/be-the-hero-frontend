@@ -10,6 +10,7 @@ import CreateOngSchema from './schema'
 
 export interface ICreateOngForm {
   resetUserType: () => void
+  submitCallback: () => void
 }
 
 export interface ICreateOngFormData {
@@ -26,6 +27,7 @@ export interface ICreateOngFormData {
 const CreateOngForm = (props: ICreateOngForm) => {
   const handleSubmit = (values: ICreateOngFormData) => {
     console.log(values)
+    props.submitCallback()
   }
 
   const formik = useFormik<ICreateOngFormData>({
