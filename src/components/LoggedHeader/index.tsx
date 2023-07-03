@@ -2,15 +2,19 @@ import { useState } from 'react'
 
 import * as S from './styles'
 
-import plusButton from '@/assets/img/plus.png'
-import Image from 'next/image'
 import EventModal from '../Modals/EventModal'
+import LoginModal from '../Modals/LoginModal'
 
 const LoggedHeader = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [modalLoginIsOpen, setModalLoginIsOpen] = useState(false)
 
   const handleOpenEventModal = () => {
     setModalIsOpen(true)
+  }
+
+  const handleOpenLoginModal = () => {
+    setModalLoginIsOpen(true)
   }
 
   return (
@@ -21,13 +25,17 @@ const LoggedHeader = () => {
           <button>contato</button>
         </S.MenuItem>
         <S.MenuItem>
-          <S.BtnImage onClick={handleOpenEventModal}>
-            criar evento
-            <Image src={plusButton} />
-          </S.BtnImage>
+          <button onClick={handleOpenEventModal}>criar evento</button>
           <EventModal
             setModalIsOpen={setModalIsOpen}
             modalIsOpen={modalIsOpen}
+          />
+        </S.MenuItem>
+        <S.MenuItem>
+          <button onClick={handleOpenLoginModal}>logout</button>
+          <LoginModal
+            setModalIsOpen={setModalLoginIsOpen}
+            modalIsOpen={modalLoginIsOpen}
           />
         </S.MenuItem>
       </S.Menu>

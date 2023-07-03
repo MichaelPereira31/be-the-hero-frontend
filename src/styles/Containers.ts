@@ -22,3 +22,15 @@ export const FullyContainer = styled.section`
     display: block;
   }
 `
+export const FullyHeader = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+
+  @media ${device.mobileXXL} {
+    display: block;
+  }
+`
