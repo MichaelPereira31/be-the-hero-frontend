@@ -5,7 +5,7 @@ import * as yup from 'yup'
 import BaseModal from '@/components/BaseModal'
 import * as S from './styles'
 import Input from '@/components/Inputs'
-import { Button, InputGroup } from '@/components/Forms/styles'
+import { InputGroup } from '@/components/Forms/styles'
 
 type TEventModalProps = {
   setModalIsOpen: (value: boolean) => void
