@@ -24,7 +24,10 @@ const CompleteUserForm = (props: ICompleteUserForm) => {
     validationSchema: CompleteUserSchema,
     validateOnChange: true,
     validateOnBlur: true,
-    onSubmit: (values) => console.log(values)
+    onSubmit: (values) => {
+      console.log(values)
+      props.submitCallback()
+    }
   })
 
   return (
