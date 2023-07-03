@@ -9,7 +9,7 @@ export const MainContainer = styled.section`
   margin: 0 auto;
 `
 
-export const FullyContainer = styled.section<{ noHeight: boolean }>`
+export const FullyContainer = styled.section<{ noHeight?: boolean }>`
   --height: ${(props) => (props.noHeight ? 'auto' : 'calc(100vh - 70px)')};
 
   display: flex;
