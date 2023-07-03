@@ -43,6 +43,7 @@ const GlobalStyles = createGlobalStyle`
     --lime-800: #246406;
     --blue-100: #cce5ff;
     --blue-400: #004085;
+    --blue-600: #51c0ff;
     --orange: #D06705;
     --red-200: #AE5050;
     --red-300: #f8d7da;
